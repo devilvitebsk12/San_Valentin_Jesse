@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Gatita Jesse 💖</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe6f2;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .gif-container {
+            margin: 20px 0;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .heart {
+            position: fixed;
+            color: red;
+            font-size: 24px;
+            animation: fall 3s linear forwards;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        .kiss {
+            display: none;
+            margin-top: 20px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Para Mi Gatita Jesse 💖</h1>
+    <p>Porque eres la persona más especial del mundo, te dedico esta canción...</p>
+    <audio controls autoplay loop>
+        <source src="https://www.dropbox.com/scl/fi/m9xdk03ogp519gpl2tqcw/te-amo-y-mas.mp3?rlkey=r2xxsqjpxetqt7d6m2wyt1re6&dl=1" type="audio/mp3">
+        Tu navegador no soporta audio.
+    </audio>
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Gatito lindo">
+        <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" alt="Gatito abrazando">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Gatito con corazones">
+    </div>
+    <p>Te amo con todo mi corazón ❤️</p>
+    <div class="button-container">
+        <p>¿Quieres ser mi Valentín? 💘</p>
+        <button onclick="showLove()">Sí 💖</button>
+    </div>
+    <br>
+    <img class="kiss" id="kissImage" src="https://media.giphy.com/media/3o6ZsXGfD6yqXZqDLa/giphy.gif" alt="Beso">
+    <script>
+        function showLove() {
+            for (let i = 0; i < 30; i++) {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = "-10px";
+                heart.innerHTML = "❤️";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 3000);
+            }
+            document.getElementById("kissImage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
